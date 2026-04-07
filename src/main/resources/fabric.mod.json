@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "familyspotify",
+  "version": "${version}",
+  "name": "FamilySpotify",
+  "description": "Spotify HUD overlay for Minecraft.",
+  "authors": [
+    {
+      "name": "KyoWaa"
+    }
+  ],
+  "license": "All Rights Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "org.kyowa.spotplaying.FamilySpotify"
+      }
+    ]
+  },
+  "mixins": [
+    "familyspotify.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*",
+    "minecraft": "~1.21.11"
+  }
+}
