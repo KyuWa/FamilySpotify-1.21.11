@@ -2,7 +2,7 @@ package org.kyowa.spotplaying
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.minecraft.client.MinecraftClient
-import net.minecraft.client.util.InputUtil
+import net.minecraft.client.gui.screen.ChatScreen
 import org.lwjgl.glfw.GLFW
 
 object SpotifyKeybinds {
@@ -11,6 +11,9 @@ object SpotifyKeybinds {
 
     fun register() {
         ClientTickEvents.END_CLIENT_TICK.register { client ->
+            // Don't fire keybinds when any screen is open (chat, inventory, etc.)
+            if (client.currentScreen != null) return@register
+
             val kb = SpotifyConfig.data.keybinds
 
             if (isJustPressed(client, kb.prevKey))    SpotifyApi.prev()
