@@ -17,7 +17,7 @@ import java.util.concurrent.Executors
 object SpotifyAuth {
 
     private const val CLIENT_ID    = "263c318a079f4d0ebee2bdbf5b6a22c4"
-    private const val WORKER_URL   = "https://familyspotify.220395610.workers.dev"
+    private const val WORKER_URL   = "https://spotify.kyowa.uk"
     private const val REDIRECT_URI = "$WORKER_URL/callback"
     private const val SCOPES       = "user-read-playback-state user-modify-playback-state user-read-currently-playing"
     private const val LOCAL_PORT   = 8888
